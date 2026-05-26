@@ -7,7 +7,7 @@ import { experience } from "@/lib/experience";
 export const metadata: Metadata = {
   title: "About — Sagnik Mukherjee",
   description:
-    "About Sagnik Mukherjee — pre-final year at IIIT Naya Raipur, 3× hackathon winner, Codeforces Specialist.",
+    "About Sagnik Mukherjee — final year at IIIT Naya Raipur, 3× hackathon winner.",
 };
 
 export default function AboutPage() {
@@ -29,7 +29,7 @@ export default function AboutPage() {
         <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-12">
           <div className="space-y-6 lg:col-span-8">
             <p className="text-balance text-[18px] leading-[1.8] text-bone/90">
-              I'm a pre-final year CSE student at the{" "}
+              I'm a final year CSE student at the{" "}
               <span className="text-pink-300">International Institute of Information Technology, Naya Raipur</span>,
               a <span className="text-pink-300">3× hackathon winner</span>, a Codeforces Specialist, and an
               ex-NTSE scholar. I build at the seam where machine learning meets production — agents that

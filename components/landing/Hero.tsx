@@ -77,7 +77,7 @@ export default function Hero() {
             >
               I build <span className="text-pink-300">agentic AI</span>, real-time computer-vision systems and the{" "}
               <span className="text-pink-300">MLOps + SRE infrastructure</span> that keeps them honest in
-              production. Pre-final year at IIIT Naya Raipur — currently shipping for{" "}
+              production. Final year at IIIT Naya Raipur — currently shipping for{" "}
               <span className="text-cream">Samsung R&D</span> and{" "}
               <span className="text-cream">SmartMe</span>.
             </motion.p>
@@ -96,7 +96,10 @@ export default function Hero() {
                 the full stack
               </MagneticButton>
               <MagneticButton href={site.resumes[0].href} variant="ghost" target="_blank">
-                resume ↓
+                resume · mle / aie ↓
+              </MagneticButton>
+              <MagneticButton href={site.resumes[1].href} variant="ghost" target="_blank">
+                resume · sde / sre ↓
               </MagneticButton>
             </motion.div>
           </div>

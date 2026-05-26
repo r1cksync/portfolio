@@ -43,7 +43,7 @@ export default function Navbar() {
               Sagnik Mukherjee
             </div>
             <div className="mt-0.5 text-[10px] uppercase tracking-[0.22em] text-ashDim">
-              Pre-Final · IIIT-NR
+              Final Year · IIIT-NR
             </div>
           </div>
         </Link>
