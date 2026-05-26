@@ -1,68 +1,65 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 export default function CursorFollower() {
-  const [pos, setPos] = useState({ x: -100, y: -100 });
-  const [visible, setVisible] = useState(false);
-  const [hover, setHover] = useState(false);
+  const ringRef = useRef<HTMLDivElement | null>(null);
+  const hoverRef = useRef(false);
+  const targetX = useRef(-100);
+  const targetY = useRef(-100);
+  const currentX = useRef(-100);
+  const currentY = useRef(-100);
 
   useEffect(() => {
-    const move = (e: MouseEvent) => {
-      setPos({ x: e.clientX, y: e.clientY });
-      if (!visible) setVisible(true);
+    // Skip on touch / coarse-pointer devices entirely
+    if (typeof window === "undefined") return;
+    const mq = window.matchMedia("(hover: none), (pointer: coarse), (max-width: 767px)");
+    if (mq.matches) return;
+
+    const ring = ringRef.current;
+    if (!ring) return;
+
+    const onMove = (e: MouseEvent) => {
+      targetX.current = e.clientX;
+      targetY.current = e.clientY;
+      ring.style.opacity = "1";
     };
-    const over = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (target.closest("a, button, [data-cursor='hover']")) setHover(true);
-      else setHover(false);
+    const onOver = (e: MouseEvent) => {
+      const t = e.target as HTMLElement;
+      hoverRef.current = !!t.closest("a, button, [data-cursor='hover']");
     };
-    const leave = () => setVisible(false);
-    window.addEventListener("mousemove", move);
-    window.addEventListener("mouseover", over);
-    window.addEventListener("mouseleave", leave);
+    const onLeave = () => {
+      ring.style.opacity = "0";
+    };
+
+    let raf = 0;
+    const tick = () => {
+      currentX.current += (targetX.current - currentX.current) * 0.22;
+      currentY.current += (targetY.current - currentY.current) * 0.22;
+      const s = hoverRef.current ? 2.2 : 1;
+      ring.style.transform = `translate3d(${currentX.current}px, ${currentY.current}px, 0) translate(-50%, -50%) scale(${s})`;
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+
+    window.addEventListener("mousemove", onMove, { passive: true });
+    window.addEventListener("mouseover", onOver, { passive: true });
+    document.addEventListener("mouseleave", onLeave);
     return () => {
-      window.removeEventListener("mousemove", move);
-      window.removeEventListener("mouseover", over);
-      window.removeEventListener("mouseleave", leave);
+      cancelAnimationFrame(raf);
+      window.removeEventListener("mousemove", onMove);
+      window.removeEventListener("mouseover", onOver);
+      document.removeEventListener("mouseleave", onLeave);
     };
-  }, [visible]);
+  }, []);
 
   return (
-    <>
-      <AnimatePresence>
-        {visible && (
-          <motion.div
-            className="pointer-events-none fixed z-[100] hidden md:block"
-            style={{ left: pos.x, top: pos.y, translateX: "-50%", translateY: "-50%" }}
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: 1,
-              scale: hover ? 2.4 : 1,
-            }}
-            exit={{ opacity: 0 }}
-            transition={{ type: "spring", damping: 30, stiffness: 400, mass: 0.4 }}
-          >
-            <div className="h-6 w-6 rounded-full border border-pink-400/70 mix-blend-difference" />
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      <AnimatePresence>
-        {visible && (
-          <motion.div
-            className="pointer-events-none fixed z-[99] hidden md:block"
-            style={{ left: pos.x, top: pos.y, translateX: "-50%", translateY: "-50%" }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.5 }}
-            exit={{ opacity: 0 }}
-            transition={{ ease: "linear", duration: 0.08 }}
-          >
-            <div className="h-[400px] w-[400px] rounded-full bg-pink-500/20 blur-[120px]" />
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+    <div
+      ref={ringRef}
+      aria-hidden
+      className="pointer-events-none fixed left-0 top-0 z-[100] hidden h-6 w-6 rounded-full border border-pink-400/70 opacity-0 mix-blend-difference transition-[opacity] duration-200 md:block"
+      style={{ willChange: "transform", transform: "translate3d(-100px,-100px,0)" }}
+    />
   );
 }
+

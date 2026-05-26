@@ -10,17 +10,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#050507",
-        carbon: "#0b0b10",
-        graphite: "#15151d",
-        slate1: "#1f1f2a",
-        slate2: "#2b2b3a",
-        line: "#2a2a35",
-        lineBright: "#43435a",
+        ink: "#030306",
+        carbon: "#07070c",
+        graphite: "#0d0d14",
+        slate1: "#15151f",
+        slate2: "#1f1f2b",
+        line: "#1d1d28",
+        lineBright: "#2e2e40",
         cream: "#fafafa",
         bone: "#e8e8ee",
-        ash: "#9a9aae",
-        ashDim: "#5a5a6e",
+        ash: "#8a8a9e",
+        ashDim: "#4a4a5c",
         pink: {
           DEFAULT: "#ff2d87",
           50: "#fff0f7",
@@ -71,7 +71,7 @@ const config: Config = {
       },
       backgroundImage: {
         "grid-faint":
-          "linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px)",
+          "linear-gradient(to right, rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.025) 1px, transparent 1px)",
         "noise":
           "url(\"data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.08 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>\")",
       },

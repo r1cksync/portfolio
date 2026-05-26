@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import ProjectCard from "@/components/ProjectCard";
-import { featuredProjects, projects } from "@/lib/projects";
+import { projects } from "@/lib/projects";
 
 export default function FeaturedWork() {
   return (
@@ -59,7 +59,7 @@ export default function FeaturedWork() {
 
         {/* Grid */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-          {featuredProjects.map((p, i) => (
+          {projects.map((p, i) => (
             <ProjectCard key={p.slug} project={p} index={i} />
           ))}
         </div>

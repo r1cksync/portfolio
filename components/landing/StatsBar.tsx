@@ -4,12 +4,11 @@ import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { value: 9, suffix: "+", label: "Production projects" },
+  { value: 20, suffix: "+", label: "Production projects" },
   { value: 6, suffix: "", label: "Industry internships" },
   { value: 3, suffix: "×", label: "Hackathon wins" },
-  { value: 60, suffix: "+", label: "AI agents shipped" },
-  { value: 381, suffix: "", label: "RL scenarios trained" },
-  { value: 120, suffix: "+", label: "UI animations crafted" },
+  { value: 200, suffix: "", label: "AI agents shipped" },
+  { value: 400, suffix: "+", label: "RL scenarios trained" },
 ];
 
 function Counter({ to, suffix }: { to: number; suffix: string }) {
@@ -43,7 +42,7 @@ function Counter({ to, suffix }: { to: number; suffix: string }) {
 export default function StatsBar() {
   return (
     <section className="relative border-y border-line bg-ink/60">
-      <div className="mx-auto grid max-w-[1400px] grid-cols-2 gap-px bg-line sm:grid-cols-3 lg:grid-cols-6">
+      <div className="mx-auto grid max-w-[1400px] grid-cols-2 gap-px bg-line sm:grid-cols-3 lg:grid-cols-5">
         {stats.map((s, i) => (
           <motion.div
             key={s.label}

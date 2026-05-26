@@ -10,23 +10,17 @@ export default function Hero() {
     <section className="relative isolate min-h-[100svh] overflow-hidden pb-24 pt-28">
       {/* Animated gradient mesh */}
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <motion.div
+        <div
           aria-hidden
-          className="absolute -left-40 top-10 h-[600px] w-[600px] rounded-full bg-pink-600/30 blur-[140px]"
-          animate={{ x: [0, 40, 0], y: [0, 30, 0] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -left-40 top-10 h-[520px] w-[520px] rounded-full bg-pink-700/15 blur-[120px]"
         />
-        <motion.div
+        <div
           aria-hidden
-          className="absolute right-0 top-1/3 h-[500px] w-[500px] rounded-full bg-pink-500/20 blur-[160px]"
-          animate={{ x: [0, -50, 0], y: [0, 50, 0] }}
-          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute right-0 top-1/3 h-[440px] w-[440px] rounded-full bg-pink-500/10 blur-[140px]"
         />
-        <motion.div
+        <div
           aria-hidden
-          className="absolute bottom-10 left-1/2 h-[400px] w-[700px] -translate-x-1/2 rounded-full bg-pink-400/10 blur-[140px]"
-          animate={{ y: [0, -30, 0] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute bottom-10 left-1/2 h-[360px] w-[640px] -translate-x-1/2 rounded-full bg-pink-400/[0.06] blur-[120px]"
         />
       </div>
 
@@ -43,7 +37,7 @@ export default function Hero() {
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-pink-500/40 bg-pink-500/10 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.18em] text-pink-300 backdrop-blur-md">
             <span className="live-dot" />
-            available for sde / sre / mle / mlops roles
+            available for sde / sre / mle / mlops / aie roles
           </span>
           <span className="hidden items-center gap-1.5 rounded-full border border-line bg-graphite/40 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.18em] text-bone backdrop-blur-md sm:inline-flex">
             <Sparkles className="h-3 w-3 text-pink-400" />
@@ -117,10 +111,10 @@ export default function Hero() {
             <div className="space-y-6">
               <Meta label="role" value="builder · researcher" />
               <Meta label="based in" value="IIIT Naya Raipur" />
-              <Meta label="cf rating" value="Specialist" />
               <Meta label="hackathons" value="3× winner" />
+              <Meta label="focus" value="agents · real-time ml" />
               <Meta label="stack" value="next.js · pytorch · k8s" />
-              <Meta label="open to" value="MLE · MLOps · SRE · SDE" />
+              <Meta label="open to" value="AIE · MLE · MLOps · SRE · SDE" />
             </div>
           </motion.div>
         </div>

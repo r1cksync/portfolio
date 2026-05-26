@@ -12,8 +12,8 @@ export default function ProjectCard({ project, index = 0 }: { project: Project; 
 
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
-  const rotX = useSpring(useTransform(my, [-0.5, 0.5], [6, -6]), { stiffness: 200, damping: 18 });
-  const rotY = useSpring(useTransform(mx, [-0.5, 0.5], [-6, 6]), { stiffness: 200, damping: 18 });
+  const rotX = useSpring(useTransform(my, [-0.5, 0.5], [4, -4]), { stiffness: 200, damping: 22 });
+  const rotY = useSpring(useTransform(mx, [-0.5, 0.5], [-4, 4]), { stiffness: 200, damping: 22 });
 
   const handleMove = (e: MouseEvent<HTMLDivElement>) => {
     const r = e.currentTarget.getBoundingClientRect();
@@ -41,11 +41,11 @@ export default function ProjectCard({ project, index = 0 }: { project: Project; 
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={handleLeave}
         style={{ rotateX: rotX, rotateY: rotY, transformStyle: "preserve-3d" }}
-        className="relative overflow-hidden rounded-2xl border border-line bg-graphite/40 backdrop-blur-sm transition-colors hover:border-pink-500/40"
+        className="relative overflow-hidden rounded-2xl border border-line bg-carbon/80 transition-colors duration-300 hover:border-pink-500/50"
       >
-        {/* glow ring */}
+        {/* gradient glow ring */}
         <div className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-          <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-pink-500/30 via-pink-400/0 to-pink-500/30 blur-xl" />
+          <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-pink-500/20 via-transparent to-pink-400/10 blur-xl" />
         </div>
 
         <Link href={`/work/${project.slug}`} className="block">
