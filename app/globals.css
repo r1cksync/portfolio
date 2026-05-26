@@ -23,12 +23,10 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-html {
-  overflow-x: hidden;
-}
+/* iOS Safari note: NEVER put overflow-x on <html> — it kills momentum scroll.
+   Use overflow-x: clip on body only (clip doesn't establish a scroll container). */
 body {
-  overflow-x: hidden;
-  overscroll-behavior-y: none;
+  overflow-x: clip;
 }
 
 @supports (padding: max(0px)) {
