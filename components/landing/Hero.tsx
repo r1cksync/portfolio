@@ -77,9 +77,9 @@ export default function Hero() {
             >
               I build <span className="text-pink-300">agentic AI</span>, real-time computer-vision systems and the{" "}
               <span className="text-pink-300">MLOps + SRE infrastructure</span> that keeps them honest in
-              production. Final year at IIIT Naya Raipur — currently shipping for{" "}
-              <span className="text-cream">Samsung R&D</span> and{" "}
-              <span className="text-cream">SmartMe</span>.
+              production. Final year at IIIT Naya Raipur — fresh off{" "}
+              <span className="text-cream">Samsung R&D</span>, now shipping for{" "}
+              <span className="text-cream">CSIDC</span>.
             </motion.p>
 
             <motion.div

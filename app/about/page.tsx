@@ -43,8 +43,9 @@ export default function AboutPage() {
               D3 knowledge graph stitching together a thousand documents.
             </p>
             <p className="text-[16px] leading-[1.8] text-ash">
-              Currently I'm an R&D Intern at <span className="text-cream">Samsung R&D Institute India — Bangalore</span>{" "}
-              and an MLOps Intern at <span className="text-cream">SmartMe</span>, with prior internships
+              Currently I'm an MLOps + Full-Stack Intern at <span className="text-cream">CSIDC</span>{" "}
+              (Chhattisgarh State Industrial Development Corporation), fresh off a{" "}
+              Machine Learning internship at <span className="text-cream">Samsung R&D Institute India</span>, with prior internships
               across <span className="text-cream">AmbujaNeotia</span>,{" "}
               <span className="text-cream">MetroMax</span>,{" "}
               <span className="text-cream">Ayatrio</span> and <span className="text-cream">SOFI</span>. I'm

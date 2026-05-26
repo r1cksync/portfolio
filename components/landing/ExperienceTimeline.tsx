@@ -39,8 +39,8 @@ export default function ExperienceTimeline() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-[15px] leading-relaxed text-ash lg:col-span-4 lg:text-right"
           >
-            From <span className="text-cream">Samsung R&D</span> applied research to{" "}
-            <span className="text-cream">SmartMe</span> production MLOps — frontend wins, ML wins,
+            From <span className="text-cream">CSIDC</span> govt-scale fullstack to{" "}
+            <span className="text-cream">Samsung R&D</span> applied ML — RAG wins, GAN wins,
             infra wins, all real.
           </motion.p>
         </div>
