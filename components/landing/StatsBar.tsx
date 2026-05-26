@@ -7,7 +7,7 @@ const stats = [
   { value: 20, suffix: "+", label: "Production projects" },
   { value: 6, suffix: "", label: "Industry internships" },
   { value: 3, suffix: "×", label: "Hackathon wins" },
-  { value: 200, suffix: "", label: "AI agents shipped" },
+  { value: 200, suffix: "+", label: "AI agents shipped" },
   { value: 400, suffix: "+", label: "RL scenarios trained" },
 ];
 

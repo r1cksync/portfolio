@@ -13,7 +13,7 @@ export default function TechMarquee() {
       <motion.div
         className="flex w-max items-center gap-12 whitespace-nowrap will-change-transform"
         animate={{ x: ["0%", "-50%"] }}
-        transition={{ ease: "linear", duration: 140, repeat: Infinity }}
+        transition={{ ease: "linear", duration: 220, repeat: Infinity }}
       >
         {items.map((t, i) => (
           <div key={`${t}-${i}`} className="flex items-center gap-12">
