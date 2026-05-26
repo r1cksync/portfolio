@@ -19,8 +19,18 @@ export const experience: Experience[] = [
       "Integrated interactive satellite monitoring with an automated compliance-scoring engine for state industrial parks.",
       "Built a React Native mobile app with 9 offline-first capabilities, AR boundary overlays and live Leaflet.js GPS tracking for field inspectors across 20+ industrial companies.",
     ],
-  },
-  {
+  },  {
+    role: "Machine Learning Engineer Intern",
+    company: "SmartMe",
+    period: "Feb 2026 — Present",
+    location: "Remote",
+    tag: "On-Device ML · Edge LLMs",
+    bullets: [
+      "Trained and deployed two on-device models served by local LLMs running entirely on edge hardware — no cloud inference, no telemetry leakage.",
+      "Task 1 — document intelligence: classification, summarisation and multi-hop reasoning over uploaded PDFs / scans, all on-device.",
+      "Task 2 — visual intelligence: image classification + natural-language description, fine-tuned for low-latency offline inference on edge devices.",
+    ],
+  },  {
     role: "Machine Learning Intern",
     company: "Samsung R&D Institute India \u2014 Bangalore",
     period: "Oct 2025 \u2014 Mar 2026",

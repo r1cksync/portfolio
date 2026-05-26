@@ -26,7 +26,7 @@ export default function ExperienceTimeline() {
               transition={{ duration: 0.8 }}
               className="font-display text-5xl font-medium leading-[0.95] tracking-tight text-cream sm:text-6xl lg:text-7xl"
             >
-              Six internships
+              Seven internships
               <br />
               <span className="aurora-text">across the stack</span>
               <span className="text-pink-500">.</span>

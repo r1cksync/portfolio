@@ -24,7 +24,7 @@ export default function StackPage() {
           </h1>
           <p className="mt-8 text-[16px] leading-relaxed text-ash sm:text-[17px]">
             Some of these are on the resume. Most have been shipped, broken and re-shipped in
-            production — across nine real projects and six internships.
+            production — across nine real projects and seven internships.
           </p>
         </div>
 

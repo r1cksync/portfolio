@@ -44,8 +44,9 @@ export default function AboutPage() {
             </p>
             <p className="text-[16px] leading-[1.8] text-ash">
               Currently I'm an MLOps + Full-Stack Intern at <span className="text-cream">CSIDC</span>{" "}
-              (Chhattisgarh State Industrial Development Corporation), fresh off a{" "}
-              Machine Learning internship at <span className="text-cream">Samsung R&D Institute India</span>, with prior internships
+              and an ML Engineer Intern at <span className="text-cream">SmartMe</span> shipping{" "}
+              on-device LLMs to edge hardware. Fresh off a Machine Learning internship at{" "}
+              <span className="text-cream">Samsung R&D Institute India</span>, with prior internships
               across <span className="text-cream">AmbujaNeotia</span>,{" "}
               <span className="text-cream">MetroMax</span>,{" "}
               <span className="text-cream">Ayatrio</span> and <span className="text-cream">SOFI</span>. I'm
