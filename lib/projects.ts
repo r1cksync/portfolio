@@ -16,6 +16,28 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "credivo",
+    title: "Credivo",
+    subtitle: "India's next-gen lending OS — BRE, Textract OCR, Bedrock risk, six-role console",
+    blurb:
+      "A production loan-management platform built like a banking-grade product. Borrower onboarding + server-side Bureau Risk Engine, AWS Textract OCR on salary slips, AWS Bedrock (Claude 3 Haiku) risk summaries with DTI + Low/Med/High classification, and five operations dashboards — Sales, Sanction, Disbursement, Collection, Admin — each with full RBAC and live analytics.",
+    description:
+      "End-to-end lending operations platform with six role-scoped consoles. Borrowers register and run through a server-side Bureau Risk Engine (PAN format, age 23–50, salary ≥ ₹25k, employment mode) with real-time rejection reasoning, then upload salary slips to S3 where AWS Textract extracts name / PAN / gross & net salary. Sanction queue invokes AWS Bedrock (Claude 3 Haiku) to generate a DTI-aware risk summary and Low/Medium/High classification with a sanction recommendation. Disbursement issues PDFKit-generated sanction letters; Collection records UTR payments and auto-closes loans at zero balance. Every API route is gated by `authenticate + requireRole(...)` — UI hiding is never trusted. Frontend is Next.js 14 (App Router) with Framer Motion + Recharts; backend is Express 4 + TypeScript on serverless Vercel with a cached-promise Mongoose connection (`bufferCommands: false`) so cold starts never hang.",
+    cover: "/projects/credivo/cover.png",
+    tags: ["Next.js 14", "Express 4", "TypeScript", "MongoDB Atlas", "AWS S3", "AWS Textract", "AWS Bedrock", "Claude 3 Haiku", "Recharts", "PDFKit", "JWT", "RBAC"],
+    github: "https://github.com/r1cksync/Credivo",
+    live: "https://credivo.vercel.app",
+    year: "2026",
+    category: "Full-Stack",
+    highlights: [
+      "Six role-scoped consoles — Borrower, Sales, Sanction, Disbursement, Collection, Admin",
+      "Bureau Risk Engine runs server-side with traceable rejection reasons",
+      "AWS Textract OCR + Bedrock (Claude 3 Haiku) risk summaries with DTI",
+      "Serverless-safe Mongo (cached promise, no buffering) + RBAC on every route",
+    ],
+    featured: true,
+  },
+  {
     slug: "incident-commander",
     title: "Incident Commander",
     subtitle: "OpenEnv RL environment where LLM agents learn to be on-call SREs",
