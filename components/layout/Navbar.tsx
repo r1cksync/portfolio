@@ -96,28 +96,45 @@ export default function Navbar() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="overflow-hidden border-t border-line bg-ink/95 backdrop-blur-xl lg:hidden"
           >
-            <div className="space-y-1 px-5 py-5">
+            <motion.div
+              initial="closed"
+              animate="open"
+              variants={{ open: { transition: { staggerChildren: 0.06, delayChildren: 0.05 } } }}
+              className="space-y-1 px-5 py-5"
+            >
               {site.nav.map((item) => (
-                <Link
+                <motion.div
                   key={item.href}
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className="block rounded-lg px-3 py-3 text-sm font-medium text-bone hover:bg-pink-500/10 hover:text-pink-300"
+                  variants={{ closed: { opacity: 0, x: -12 }, open: { opacity: 1, x: 0 } }}
+                  transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  {item.label}
-                </Link>
+                  <Link
+                    href={item.href}
+                    onClick={() => setOpen(false)}
+                    className="group flex items-center justify-between rounded-lg px-3 py-3.5 text-[15px] font-medium text-bone transition-colors hover:bg-pink-500/10 hover:text-pink-300 active:bg-pink-500/15"
+                  >
+                    <span>{item.label}</span>
+                    <span className="text-pink-400 opacity-0 transition-opacity group-hover:opacity-100">→</span>
+                  </Link>
+                </motion.div>
               ))}
-              <Link
-                href="/#contact"
-                onClick={() => setOpen(false)}
-                className="mt-2 block rounded-lg bg-pink-500 px-3 py-3 text-center text-sm font-semibold text-white"
+              <motion.div
+                variants={{ closed: { opacity: 0, y: 10 }, open: { opacity: 1, y: 0 } }}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                className="pt-2"
               >
-                let's talk →
-              </Link>
-            </div>
+                <Link
+                  href="/#contact"
+                  onClick={() => setOpen(false)}
+                  className="block rounded-lg bg-pink-500 px-3 py-3.5 text-center text-sm font-semibold text-white shadow-[0_0_24px_-10px_rgba(255,45,135,0.7)]"
+                >
+                  let&apos;s talk →
+                </Link>
+              </motion.div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

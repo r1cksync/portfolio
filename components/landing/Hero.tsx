@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 
 export default function Hero() {
   return (
-    <section className="relative isolate min-h-[100svh] overflow-hidden pb-24 pt-28">
+    <section className="relative isolate min-h-[100svh] overflow-hidden pb-20 pt-24 sm:pb-24 sm:pt-28">
       {/* Animated gradient mesh */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div
@@ -33,11 +33,11 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-10 flex items-center gap-3"
+          className="mb-8 flex flex-wrap items-center gap-2.5 sm:mb-10 sm:gap-3"
         >
-          <span className="inline-flex items-center gap-2 rounded-full border border-pink-500/40 bg-pink-500/10 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.18em] text-pink-300 backdrop-blur-md">
+          <span className="inline-flex items-center gap-2 rounded-full border border-pink-500/40 bg-pink-500/10 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.16em] text-pink-300 backdrop-blur-md sm:text-[11px] sm:tracking-[0.18em]">
             <span className="live-dot" />
-            available for sde / sre / mle / mlops / aie roles
+            available for sde / sre / mle / mlops / aie
           </span>
           <span className="hidden items-center gap-1.5 rounded-full border border-line bg-graphite/40 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.18em] text-bone backdrop-blur-md sm:inline-flex">
             <Sparkles className="h-3 w-3 text-pink-400" />
@@ -73,7 +73,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="mt-10 max-w-2xl text-balance text-[17px] leading-relaxed text-bone/80 sm:text-[19px]"
+              className="mt-8 max-w-2xl text-balance text-[15.5px] leading-relaxed text-bone/80 sm:mt-10 sm:text-[19px]"
             >
               I build <span className="text-pink-300">agentic AI</span>, real-time computer-vision systems and the{" "}
               <span className="text-pink-300">MLOps + SRE infrastructure</span> that keeps them honest in

@@ -131,6 +131,7 @@ export const projects: Project[] = [
       "Multi-agent credit underwriting platform built for production banking workflows. Eighteen specialised agents — document_ingestor, kyc_validator, income_normalizer, bureau_aggregator, fraud_signaler, dti_calculator, collateral_assessor, behavioural_scorer, sector_risk_analyst, peer_benchmarker, regulatory_compliance_checker, ecl_estimator, stress_tester, narrative_writer, decision_committee, audit_logger, explanation_generator, escalation_router — coordinate through a planner that respects regulatory boundaries. Every score ships with traceable feature attribution and a regulator-ready audit trail. Built on Next.js + TypeScript with a multi-tenant architecture, employee + customer portals, and an editorial design language inspired by financial broadsheets.",
     cover: "/projects/creditlens/cover.png",
     tags: ["Next.js", "TypeScript", "LangChain", "Multi-Agent", "PostgreSQL", "Regulatory Compliance", "Banking", "RBAC"],
+    github: "https://github.com/r1cksync/creditlens-aws-infra-deployment",
     year: "2025",
     category: "Agentic AI",
     highlights: [
@@ -150,6 +151,7 @@ export const projects: Project[] = [
       "A teaching-grade simulator for the foundations of distributed time. Each process card surfaces its physical clock, Lamport scalar and full vector clock side-by-side, and every local event / send / receive updates them according to Lamport's and Mattern's rules. A controllable message-sending panel lets you queue inter-process messages with custom network delay; events are stamped with delivery times and the resulting happened-before relation is rendered as a live causality DAG. Designed for the moment students stop treating vector clocks as abstract notation and start *seeing* concurrency.",
     cover: "/projects/logical-clocks/cover.png",
     tags: ["React", "TypeScript", "Distributed Systems", "Visualization", "Lamport Clocks", "Vector Clocks"],
+    github: "https://github.com/r1cksync/Distributed-Systems-Mini-Project",
     year: "2025",
     category: "Distributed Systems",
     highlights: [
@@ -189,6 +191,7 @@ export const projects: Project[] = [
       "A geospatial pipeline that ingests NASA's VIIRS DNB nighttime-light imagery through Google Earth Engine, clips it against India's pincode boundary shapefiles, and emits a per-PIN time-series of mean radiance. The output is a hyperlocal proxy for electrification, urbanisation and economic activity that complements (and often beats) census data for off-cycle years. Pipeline handles cloud masking, stray-light correction and pincode boundary edge cases, and exports clean GeoJSON / CSV for downstream economic modelling.",
     cover: "/projects/india-nightlight/cover.webp",
     tags: ["Google Earth Engine", "VIIRS DNB", "Python", "GeoPandas", "Remote Sensing", "Geospatial"],
+    github: "https://github.com/r1cksync/India-Nightlight-Analysis",
     year: "2024",
     category: "Geospatial / Data",
     highlights: [

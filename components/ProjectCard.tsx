@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useRef, useState, type MouseEvent } from "react";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ArrowUpRight, Github, Globe } from "lucide-react";
 import type { Project } from "@/lib/projects";
@@ -9,6 +9,16 @@ import type { Project } from "@/lib/projects";
 export default function ProjectCard({ project, index = 0 }: { project: Project; index?: number }) {
   const ref = useRef<HTMLDivElement | null>(null);
   const [hovered, setHovered] = useState(false);
+  const [isTouch, setIsTouch] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mq = window.matchMedia("(hover: none), (pointer: coarse)");
+    const update = () => setIsTouch(mq.matches);
+    update();
+    mq.addEventListener?.("change", update);
+    return () => mq.removeEventListener?.("change", update);
+  }, []);
 
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
@@ -16,6 +26,7 @@ export default function ProjectCard({ project, index = 0 }: { project: Project; 
   const rotY = useSpring(useTransform(mx, [-0.5, 0.5], [-4, 4]), { stiffness: 200, damping: 22 });
 
   const handleMove = (e: MouseEvent<HTMLDivElement>) => {
+    if (isTouch) return;
     const r = e.currentTarget.getBoundingClientRect();
     mx.set((e.clientX - r.left) / r.width - 0.5);
     my.set((e.clientY - r.top) / r.height - 0.5);
@@ -38,10 +49,11 @@ export default function ProjectCard({ project, index = 0 }: { project: Project; 
       <motion.div
         ref={ref}
         onMouseMove={handleMove}
-        onMouseEnter={() => setHovered(true)}
+        onMouseEnter={() => !isTouch && setHovered(true)}
         onMouseLeave={handleLeave}
-        style={{ rotateX: rotX, rotateY: rotY, transformStyle: "preserve-3d" }}
-        className="relative overflow-hidden rounded-2xl border border-line bg-carbon/80 transition-colors duration-300 hover:border-pink-500/50"
+        whileTap={isTouch ? { scale: 0.985 } : undefined}
+        style={isTouch ? undefined : { rotateX: rotX, rotateY: rotY, transformStyle: "preserve-3d" }}
+        className="relative overflow-hidden rounded-2xl border border-line bg-carbon/80 transition-colors duration-300 hover:border-pink-500/50 active:border-pink-500/60"
       >
         {/* gradient glow ring */}
         <div className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">
