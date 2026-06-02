@@ -6,9 +6,9 @@ export const site = {
     "Final year at IIIT Naya Raipur. 3× hackathon winner. I build agentic AI, real-time computer-vision systems and the MLOps + SRE infrastructure that keeps them honest in production.",
   metaDescription:
     "Sagnik Mukherjee — agentic AI, real-time ML and production MLOps / SRE engineer. 3× hackathon winner, final year @ IIIT Naya Raipur.",
-  email: "sagnikmukherjee@iiitnr.edu.in",
+  email: "sagnik23102@iiitnr.edu.in",
   github: "https://github.com/r1cksync",
-  linkedin: "https://www.linkedin.com/in/sagnik-mukherjee/",
+  linkedin: "https://www.linkedin.com/in/sagnik0mukherjee/",
   location: "IIIT Naya Raipur, India",
   university: "International Institute of Information Technology, Naya Raipur",
   status: "Open to MLE / MLOps / AIE & SDE / SRE roles",
